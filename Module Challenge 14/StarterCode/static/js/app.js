@@ -32,7 +32,7 @@ function demoInfo(sample)
           Object.entries(resultData).forEach(([Key,value]) =>{
             // add to the sample data / demographics section
             d3.select("#sample-metadata")
-                .append("h5").text('${key}: ${value}');
+                .append("h5").text(`${Key}: ${value}`);
           });
     });
 }
@@ -70,7 +70,7 @@ function buildBarChart(sample)
 
         // build the bar chart
         // get the yTicks
-        let yticks = otu_ids.slice(0, 10).map(id =>'OTU ${ID}');
+        let yticks = otu_ids.slice(0, 10).map(id =>`OTU ${id}`);
         let xValues = sample_values.slice(0, 10);
         let textLables = otu_labels.slice(0,10);
         //console.log(textLabels));
